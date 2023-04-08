@@ -1,0 +1,415 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* ------------------------------ CSS RESET END ----------------------------- */
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+}
+
+main {
+  height: 100vh;
+}
+
+#cardsContainer,
+#formContainer,
+main.row {
+  padding: 0;
+  margin: 0;
+}
+
+#cardsContainer {
+  background-image: url(./images/bg-main-desktop.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  position: relative;
+  padding: 28px;
+  color: hsl(0, 0%, 100%);
+}
+
+#cardsContainer > div {
+  margin-right: 0;
+}
+
+#cardfront,
+#cardback {
+  width: fit-content;
+  border-radius: 8px;
+  position: relative;
+  padding: 0;
+}
+
+#cardfront,
+#cardback {
+  box-shadow: 4px 4px 18px 4px #00000023;
+}
+
+#frontcarddetail {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+}
+
+#cardDetail {
+  margin-top: auto;
+  margin-bottom: 0;
+  justify-content: space-around;
+  display: grid;
+  margin-top: 32px;
+}
+#frontcarddetail p {
+  display: flex;
+  overflow: auto;
+}
+
+#frontCardExpiry {
+  margin-left: auto;
+  margin-right: 6px;
+}
+
+#nameexpriy{
+    display: flex;
+}
+
+#backcarddetail {
+  position: absolute;
+  right: 36px;
+  margin: 0.75rem;
+  padding-bottom: 8px;
+}
+
+#backcarddetail p {
+  margin: 0;
+}
+
+#Circles {
+  display: flex;
+}
+
+#bigCircle {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+#smallCircle {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  margin: auto 12px;
+}
+
+/* ------------------------------ FORM SECTION ------------------------------ */
+#formContainer {
+  position: relative;
+}
+
+form {
+  color: hsl(278, 68%, 11%);
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid hsl(279, 6%, 55%);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button:focus {
+  border: 1px solid hsl(278, 68%, 11%);
+}
+
+button {
+  width: 100%;
+  border-radius: 6px;
+  padding: 8px;
+  background-color: hsl(278, 68%, 11%);
+  color: #fff;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+#exandcvv {
+  display: flex;
+  margin-bottom: 0;
+}
+
+#exandcvv .mm_yyinput {
+  margin-right: 5px;
+}
+
+#exandcvv .mm-yy input:first-child {
+  margin-right: 2.5px;
+}
+
+#exandcvv .mm-yy input:nth-child(2) {
+  margin-left: 2.5px;
+}
+
+#exandcvv .cvvinput {
+  margin-left: 5px;
+}
+
+#exandcvv .mm-yy {
+  display: flex;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+li {
+  margin: 12px 0;
+}
+
+.error {
+  color: hsl(0, 100%, 66%);
+  font-size: 16px;
+  display: none;
+}
+
+.err {
+  border: 1px solid hsl(0, 100%, 66%);
+}
+
+.error.show{
+    display: block;
+}
+.mmyyerr{
+    position: relative;
+    height: 28px;
+}
+.yyerr{
+    position: absolute;
+    left: 0;
+    bottom: 3.2px;
+}
+
+#forminput{
+  display: block;
+}
+
+#forminput.hideform{
+  display: none;
+}
+
+#messagedata{
+  display: none;
+  padding-top: 10px;
+}
+#messagedata.showmessage{
+  display: block;
+}
+
+#messagedata li img{
+  margin: 0 auto;
+}
+#messagedata li p{
+  color: hsl(279, 6%, 55%);
+}
+
+#messagedata li p,h2{
+  text-align: center;
+}
+
+/* ----------------------- MEDIA QUERIES FOR ALL SIZES ---------------------- */
+@media screen and (min-width: 768px) {
+  #cardsContainer > div {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    margin-left: 12%;
+  }
+  #cardfront {
+    margin-bottom: 12px;
+    margin-right: 20%;
+  }
+  #cardback {
+    margin-top: 12px;
+    margin-left: 20%;
+  }
+
+  #backcarddetail {
+    top: 39%;
+  }
+
+  form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 18px;
+  }
+
+  #frontCardNo {
+    font-size: 2.35rem;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  #cardsContainer {
+    background-image: url(./images/bg-main-mobile.png);
+    background-position: top;
+    padding-bottom: 20%;
+  }
+
+  #cardfront {
+    margin-right: 20%;
+    margin-top: 12px;
+    position: absolute;
+    top: 40%;
+    z-index: 9;
+  }
+  #cardback {
+    margin-left: 20%;
+    margin-bottom: 12px;
+  }
+
+  #backcarddetail {
+    right: 20px;
+    top: 32%;
+    font-size: 16px;
+  }
+
+  form {
+    padding: 8%;
+  }
+
+  #frontCardNo {
+    font-size: 1.35rem;
+  }
+
+  #bigCircle {
+    width: 30px;
+    height: 30px;
+  }
+  #smallCircle {
+    height: 15px;
+    width: 15px;
+  }
+
+  #cardDetail{
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) and (min-width: 768px){
+  #frontCardNo{
+    font-size: 1rem;
+  }
+  #nameexpriy{
+    font-size: 14px;
+  }
+  #cardDetail{
+    margin-top: 5%;
+  }
+  #bigCircle {
+    width: 24px;
+    height: 24px;
+  }
+  #smallCircle {
+    height: 13px;
+    width: 13px;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 800px){
+  #cardDetail{
+    margin-top: 3%;
+  }
+  #frontCardNo{
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 1317px) and (min-width: 1024px){
+  #cardDetail{
+    margin-top: 6%;
+  }
+  #frontCardNo{
+    font-size: 1.8rem;
+  }
+}
